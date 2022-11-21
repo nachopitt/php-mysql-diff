@@ -96,7 +96,7 @@ class DiffCommand extends AbstractCommand
 
         if ($databaseDiff->isEmptyDifferences()) {
             $this->outputLine('<comment>The databases have the same schema!</comment>');
-            exit;
+            exit(0);
         }
 
         $this->outputLine(sprintf('<info>FROM</info> %s', $from));
@@ -171,5 +171,7 @@ class DiffCommand extends AbstractCommand
 
         $this->outputLine();
         $this->outputLine('<comment>Diff completed!</comment>');
+
+        exit(0);
     }
 }

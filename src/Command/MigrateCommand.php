@@ -108,7 +108,7 @@ class MigrateCommand extends AbstractCommand
         if ($databaseDiff->isEmptyDifferences()) {
             $this->outputLine();
             $this->outputLine('<comment>The databases have the same schema!</comment>');
-            exit;
+            exit(0);
         }
 
         $this->outputString('• Generating migration script ...');
@@ -126,5 +126,7 @@ class MigrateCommand extends AbstractCommand
         } else {
             $this->outputLine($migrationScript, true);
         }
+
+        exit(0);
     }
 }
